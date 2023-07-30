@@ -7,3 +7,10 @@ customer2_p.subscribe('category_groceries')
 
 for message in customer2_p.listen():
     print(message)
+    if type(message['data'])!= int:
+        data = message['data']
+        message = data.decode()
+        if message == "STOP":
+            break
+
+customer2_p.unsubscribe('category_groceries')
