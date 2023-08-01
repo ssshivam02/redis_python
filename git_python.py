@@ -14,7 +14,7 @@ except git.exc.GitCommandError:
     repo = git.Repo(path)
 
 try:
-    repo.git.checkout("-b","new_branch")
+    repo.git.checkout("-b","new_branch") # this will create new branch if this branch this will raise error
 except git.exc.GitCommandError:
     repo.git.checkout("new_branch")
 
